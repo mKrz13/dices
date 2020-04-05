@@ -65,4 +65,10 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Sounds\coins.m4a">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
