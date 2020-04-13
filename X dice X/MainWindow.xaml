@@ -12,615 +12,618 @@
             <GradientStop Color="#FF1D3C3E" Offset="0.52"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Border Margin="5">
-
-        <StackPanel>
-            <Grid x:Name="grd">
-
-                <Grid.Resources>
-                    <Style x:Key="headers" TargetType="Label">
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                        <Setter Property="BorderBrush" Value="Black"/>
-                        <Setter Property="BorderThickness" Value="3"/>
-                        <Setter Property="Margin" Value="1"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Style.Triggers>
-                            <Trigger Property="Grid.Row" Value="1">
-                                <Setter Property="BorderThickness" Value="1.5"/>
-                                <Setter Property="Margin" Value="1,0,1,0"/>
-                                <Setter Property="FontWeight" Value="DemiBold"/>
-                            </Trigger>
-                            <Trigger Property="Grid.Column" Value="0">
-                                <Setter Property="BorderThickness" Value="1.5"/>
-                                <Setter Property="FontFamily" Value="Comic Sans MS"/>
-                                <Setter Property="FontWeight" Value="SemiBold"/>
-                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
-                                <Setter Property="Margin" Value="0,1,0,0"/>
-
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-
-
-                    <Style x:Key="p1Content" TargetType="Label">
-                        <Setter Property="BorderBrush" Value="Black"/>
-                        <Setter Property="BorderThickness" Value="0.75"/>
-                        <Setter Property="Background" Value="#FFACCFEE" />
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                        <Setter Property="VerticalContentAlignment" Value="Center"/>
-                        <Setter Property="FontSize" Value="16"/>
-                        <Setter Property="FontFamily" Value="Comic Sans MS"/>
-                        <EventSetter Event="MouseLeftButtonDown" Handler="scoreLabelClick"/>
-                        <EventSetter Event="MouseEnter" Handler="mouseEnter"/>                        
-                        <EventSetter Event="MouseLeave" Handler="mouseLeave"/>                        <EventSetter Event="MouseEnter" Handler="mouseEnter"/>
-
-
-
-                    </Style>
-
-
-                    <Style x:Key="score" TargetType="Label">
-                        <Setter Property="BorderBrush" Value="Black"/>
-
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="BorderThickness" Value="2"/>
-                        <Setter Property="FontFamily" Value="Comic Sans MS"/>
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    </Style>
-
-
-
-                </Grid.Resources>
-
-
-
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-
-
-
-                </Grid.RowDefinitions>
-
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <!--Row 0: Header-->
-                <Label Content="Gracz 1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource headers}" Margin="1,1,1,1">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF7498CB" Offset="1"/>
-                            <GradientStop Color="White" Offset="0"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label Content="Gracz 2" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Style="{StaticResource headers}" Margin="1,1,1,1">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF7498CB" Offset="0.21"/>
-                            <GradientStop Color="#FFC1C4E4" Offset="0.677"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label x:Name="lblMove" Content="Ruch gracz 1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="3" VerticalContentAlignment="Center" FontWeight="Bold" Margin="0,1,1,0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF99CED6" Offset="0.84"/>
-                            <GradientStop Color="White" Offset="0.273"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-
-                <!--Row 1: SubHeader-->
-
-                <!--Player 1-->
-                <Label Content="Runda 1" Grid.Row="1" Grid.Column="1" Style="{StaticResource headers}" Margin="1,0,1,0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFD7B2EC"/>
-                            <GradientStop Color="#FFC78AEA" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label Content="Runda 2" Grid.Row="1" Grid.Column="2" Style="{StaticResource headers}" Margin="1,0,1,0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFB47AD4"/>
-                            <GradientStop Color="#FFA754D4" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label Content="Runda 3" Grid.Row="1" Grid.Column="3" Style="{StaticResource headers}" Margin="1,0,1,0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFA42BEA"/>
-                            <GradientStop Color="#FF9606EA" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 2-->
-                <Label Content="Runda 1" Grid.Row="1" Grid.Column="4" Style="{StaticResource headers}" Margin="1,0,1,0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE07FAB"/>
-                            <GradientStop Color="#FFE05C98" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label Content="Runda 2" Grid.Row="1" Grid.Column="5" Style="{StaticResource headers}" Margin="1,0,1,0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFD44E8B"/>
-                            <GradientStop Color="#FFD6347E" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label Content="Runda 3" Grid.Row="1" Grid.Column="6" Style="{StaticResource headers}" Margin="1,0,1,0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFD61C70"/>
-                            <GradientStop Color="#FFDE0C6B" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-
-                <!--Row 2-->
-                <Label Content="jedynki" Grid.Row="2" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="White" Offset="0.197"/>
-                            <GradientStop Color="#FFF9D90B" Offset="0.62"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="2" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="2" Grid.Column="4" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="2" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="2" Grid.Column="6" Style="{StaticResource p1Content}" />
-
-
-                <!--Row 3-->
-                <Label Content="dwójki" Grid.Row="3" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFFBF577" Offset="0.037"/>
-                            <GradientStop Color="#FFCFD45F" Offset="0.92"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-
-                <!--Player 1-->
-                <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="3" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="3" Grid.Column="4" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="3" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="3" Grid.Column="6" Style="{StaticResource p1Content}" />
-
-
-
-                <!--Row 4-->
-                <Label Content="trójki" Grid.Row="4" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFACF73F" Offset="0.97"/>
-                            <GradientStop Color="#FFA8F0A4" Offset="0"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="4" Grid.Column="2" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="4" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="4" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="4" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="4" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 5-->
-                <Label Content="czwórki" Grid.Row="5" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF3FF12E" Offset="0.777"/>
-                            <GradientStop Color="#FF1BEABB" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="5" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="5" Grid.Column="3" Style="{StaticResource p1Content}" />
-                <!--Player 2-->
-                <Label Grid.Row="5" Grid.Column="4" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="5" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="5" Grid.Column="6" Style="{StaticResource p1Content}" />
-
-
-                <!--Row 6-->
-                <Label Content="piątki" Grid.Row="6" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF15EE46"/>
-                            <GradientStop Color="#FF32C4D3" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="6" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="6" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="6" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="6" Grid.Column="4" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="6" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="6" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-                <!--Row 7-->
-                <Label Content="szórski" Grid.Row="7" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF67ECEC"/>
-                            <GradientStop Color="#FF19BBD4" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="7" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="7" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="7" Grid.Column="3" Style="{StaticResource p1Content}" />
-                <!--Player 2-->
-                <Label Grid.Row="7" Grid.Column="4" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="7" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="7" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 8-->
-                <Label Content="suma" Grid.Row="8" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF39CAF5" Offset="0.87"/>
-                            <GradientStop Color="#FF6992E8" Offset="0.967"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Name="p1SumSchool1" Content="" Grid.Row="8" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label Name="p1SumSchool2" Grid.Row="8" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Name="p1SumSchool3" Grid.Row="8" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Name="p2SumSchool1" Grid.Row="8" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Name="p2SumSchool2" Grid.Row="8" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Name="p2SumSchool3" Grid.Row="8" Grid.Column="6" Style="{StaticResource p1Content}" />
-
-
-                <!--Row 9-->
-                <Label Content="premia" Grid.Row="9" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF34B0EA" Offset="0.253"/>
-                            <GradientStop Color="#FF0F6DDC" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label x:Name="p1Premiun1" Grid.Row="9" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label x:Name="p1Premiun2" Grid.Row="9" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label x:Name="p1Premiun3" Grid.Row="9" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label x:Name="p2Premiun1" Grid.Row="9" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label x:Name="p2Premiun2" Grid.Row="9" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label x:Name="p2Premiun3" Grid.Row="9" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 10-->
-                <Label Content="3-jednakowe" Grid.Row="10" Grid.Column="0" Style="{StaticResource headers}" Background="#FF4067EA"/>
-                <!--Player 1-->
-                <Label Grid.Row="10" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="10" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="10" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="10" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="10" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="10" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 11-->
-                <Label Content="4-jednakowe" Grid.Row="11" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF4220DC" Offset="1"/>
-                            <GradientStop Color="#FF405EE4" Offset="0"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="11" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="11" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="11" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="11" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="11" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="11" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-                <!--Row 12-->
-                <Label Content="full" Grid.Row="12" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFA770EA" Offset="1"/>
-                            <GradientStop Color="#FF2843EE" Offset="0.61"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="12" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="12" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="12" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="12" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="12" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="12" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 13-->
-                <Label Content="mały strit" Grid.Row="13" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFAF93B8"/>
-                            <GradientStop Color="#FF4220DC" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="13" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="13" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="13" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="13" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="13" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="13" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-                <!--Row 14-->
-                <Label Content="duży strit" Grid.Row="14" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF50239E" Offset="1"/>
-                            <GradientStop Color="#FF4220DC" Offset="0.75"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="14" Grid.Column="1" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="14" Grid.Column="2" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="14" Grid.Column="3" Style="{StaticResource p1Content}"/>
-                <!--Player 2-->
-                <Label Grid.Row="14" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="14" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="14" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 15-->
-                <Label Content="generał" Grid.Row="15" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF50239E"/>
-                            <GradientStop Color="#FF9220D3" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="15" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="15" Grid.Column="2" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="15" Grid.Column="3" Style="{StaticResource p1Content}" />
-                <!--Player 2-->
-                <Label Grid.Row="15" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="15" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="15" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 16-->
-                <Label Content="szansa" Grid.Row="16" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF5E1999"/>
-                            <GradientStop Color="#FF9D49E2" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="16" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="16" Grid.Column="2" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="16" Grid.Column="3" Style="{StaticResource p1Content}" />
-                <!--Player 2-->
-                <Label Grid.Row="16" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="16" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="16" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-                <!--Row 17-->
-                <Label Content="parzyste" Grid.Row="17" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF9C32B4" Offset="0.477"/>
-                            <GradientStop Color="#FF6420DC" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="17" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="17" Grid.Column="2" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="17" Grid.Column="3" Style="{StaticResource p1Content}" />
-                <!--Player 2-->
-                <Label Grid.Row="17" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="17" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="17" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-                <!--Row 18-->
-                <Label Content="nieparzyste" Grid.Row="18" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFEA70C9" Offset="1"/>
-                            <GradientStop Color="#FF8F1EA8" Offset="0.61"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Grid.Row="18" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="18" Grid.Column="2" Style="{StaticResource p1Content}" />
-                <Label Grid.Row="18" Grid.Column="3" Style="{StaticResource p1Content}" />
-                <!--Player 2-->
-                <Label Grid.Row="18" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="18" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Grid.Row="18" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 19-->
-                <Label Content="suma" Grid.Row="19" Grid.Column="0" Style="{StaticResource headers}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFEE5F1C"/>
-                            <GradientStop Color="#FFF17A4D" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label Name="p1SumOther1"  Grid.Row="19" Grid.Column="1" Style="{StaticResource p1Content}" />
-                <Label Name="p1SumOther2" Grid.Row="19" Grid.Column="2" Style="{StaticResource p1Content}" />
-                <Label Name="p1SumOther3" Grid.Row="19" Grid.Column="3" Style="{StaticResource p1Content}" />
-                <!--Player 2-->
-                <Label Name="p2SumOther1" Grid.Row="19" Grid.Column="4" Style="{StaticResource p1Content}"/>
-                <Label Name="p2SumOther2" Grid.Row="19" Grid.Column="5" Style="{StaticResource p1Content}"/>
-                <Label Name="p2SumOther3" Grid.Row="19" Grid.Column="6" Style="{StaticResource p1Content}"/>
-
-
-                <!--Row 20-->
-                <Label Content="razem" Grid.Row="20" Grid.Column="0" Style="{StaticResource headers}" >
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFEC4621"/>
-                            <GradientStop Color="#FFF11515" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <!--Player 1-->
-                <Label x:Name="p1Total1" Grid.Row="20" Grid.Column="1" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
-                <Label x:Name="p1Total2" Grid.Row="20" Grid.Column="2" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
-                <Label x:Name="p1Total3" Grid.Row="20" Grid.Column="3" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
-                <!--Player 2-->
-                <Label x:Name="p2Total1" Grid.Row="20" Grid.Column="4" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
-                <Label x:Name="p2Total2" Grid.Row="20" Grid.Column="5" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
-                <Label x:Name="p2Total3" Grid.Row="20" Grid.Column="6" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
-                <!--Row 21-->
-                <Label Content="WYNIK" Grid.Row="21" Grid.Column="0" Style="{StaticResource headers}" MinHeight="35" HorizontalContentAlignment="Center" BorderThickness="2" Margin="0">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF99CED6" Offset="0.84"/>
-                            <GradientStop Color="White" Offset="0.273"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label x:Name="p1Score" Grid.Row="21" Grid.Column="1" Content="0 ptk." MinHeight="35" Grid.ColumnSpan="3" Style="{StaticResource score}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF7498CB" Offset="1"/>
-                            <GradientStop Color="White" Offset="0"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label x:Name="p2Score" Grid.Row="21" Grid.Column="4" Content="0 ptk." MinHeight="35" Grid.ColumnSpan="3" Style="{StaticResource score}">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF7498CB" Offset="0.21"/>
-                            <GradientStop Color="#FFC1C4E4" Offset="0.677"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-
-            </Grid>
-
-
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <WrapPanel.Resources>
-                    <Style TargetType="Image">
-                        <Setter Property="Margin" Value="5"/>
-                    </Style>
-                </WrapPanel.Resources>
-                <Image  x:Name="imgD1" Source="\Dices\1.png" Width="75" Height="75" MouseLeftButtonDown="imgD1_MouseLeftButtonDown" />
-                <Image  x:Name="imgD2" Source="\Dices\6s.png" Width="75" Height="75" MouseLeftButtonDown="imgD2_MouseLeftButtonDown" />
-                <Image  x:Name="imgD3" Source="\Dices\4.png" Width="75" Height="75" MouseLeftButtonDown="imgD3_MouseLeftButtonDown" />
-                <Image  x:Name="imgD4" Source="\Dices\3.png" Width="75" Height="75" MouseLeftButtonDown="imgD4_MouseLeftButtonDown"  />
-                <Image  x:Name="imgD5" Source="\Dices\4.png" Width="75" Height="75" MouseLeftButtonDown="imgD5_MouseLeftButtonDown" />
-
-            </WrapPanel>
-
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-                <Button x:Name="btnRollTheDices" Content="Rzuć kośćmi" Margin="10" BorderBrush="Black" BorderThickness="2" VerticalAlignment="Center" MinHeight="35" Click="btnRollTheDices_Click" FontSize="16">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFF5F5ED"/>
-                            <GradientStop Color="#FFF7F707" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Label x:Name="lblChooseDicesToReroll" Content="Wybierz kości do wymiany" VerticalContentAlignment="Center" MinHeight="35" FontSize="16" Foreground="Black" BorderThickness="2" BorderBrush="Black" Margin="20">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF0CEE35" Offset="0.993"/>
-                            <GradientStop Color="#FFC4ECCB" Offset="0.297"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
-                <Label x:Name="lblRoll" Content="Rzut nr 0" VerticalContentAlignment="Center" MinHeight="35" FontSize="16" Foreground="Black" BorderThickness="2" BorderBrush="Black" Margin="10" VerticalAlignment="Center">
-                    <Label.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFA198DA" Offset="1"/>
-                            <GradientStop Color="Black" Offset="1"/>
-                            <GradientStop Color="#FFD1CFE0" Offset="0.447"/>
-                        </LinearGradientBrush>
-                    </Label.Background>
-                </Label>
+
+    <ScrollViewer>
+        <Border Margin="5">
+            <StackPanel>
+                <Grid x:Name="grd">
+
+                    <Grid.Resources>
+                        <Style x:Key="headers" TargetType="Label">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="3"/>
+                            <Setter Property="Margin" Value="1"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Style.Triggers>
+                                <Trigger Property="Grid.Row" Value="1">
+                                    <Setter Property="BorderThickness" Value="1.5"/>
+                                    <Setter Property="Margin" Value="1,0,1,0"/>
+                                    <Setter Property="FontWeight" Value="DemiBold"/>
+                                </Trigger>
+                                <Trigger Property="Grid.Column" Value="0">
+                                    <Setter Property="BorderThickness" Value="1.5"/>
+                                    <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                                    <Setter Property="FontWeight" Value="SemiBold"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                                    <Setter Property="Margin" Value="0,1,0,0"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+
+                        <Style x:Key="p1Content" TargetType="Label">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="0.75"/>
+                            <Setter Property="Background" Value="#FFACCFEE" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="16"/>
+                            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                            <EventSetter Event="MouseLeftButtonDown" Handler="scoreLabelClick"/>
+                            <EventSetter Event="MouseEnter" Handler="mouseEnter"/>
+                            <EventSetter Event="MouseLeave" Handler="mouseLeave"/>
+                            <EventSetter Event="MouseEnter" Handler="mouseEnter"/>
+
+
+
+                        </Style>
+
+
+                        <Style x:Key="score" TargetType="Label">
+                            <Setter Property="BorderBrush" Value="Black"/>
+
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+
+
+
+                    </Grid.Resources>
+
+
+
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+
+
+
+                    </Grid.RowDefinitions>
+
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Row 0: Header-->
+                    <Label Content="Gracz 1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource headers}" Margin="1,1,1,1">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF7498CB" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label Content="Gracz 2" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Style="{StaticResource headers}" Margin="1,1,1,1">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF7498CB" Offset="0.21"/>
+                                <GradientStop Color="#FFC1C4E4" Offset="0.677"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="lblMove" Content="Ruch gracz 1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="3" VerticalContentAlignment="Center" FontWeight="Bold" Margin="0,1,1,0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF99CED6" Offset="0.84"/>
+                                <GradientStop Color="White" Offset="0.273"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+
+                    <!--Row 1: SubHeader-->
+
+                    <!--Player 1-->
+                    <Label Content="Runda 1" Grid.Row="1" Grid.Column="1" Style="{StaticResource headers}" Margin="1,0,1,0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD7B2EC"/>
+                                <GradientStop Color="#FFC78AEA" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label Content="Runda 2" Grid.Row="1" Grid.Column="2" Style="{StaticResource headers}" Margin="1,0,1,0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB47AD4"/>
+                                <GradientStop Color="#FFA754D4" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label Content="Runda 3" Grid.Row="1" Grid.Column="3" Style="{StaticResource headers}" Margin="1,0,1,0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFA42BEA"/>
+                                <GradientStop Color="#FF9606EA" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 2-->
+                    <Label Content="Runda 1" Grid.Row="1" Grid.Column="4" Style="{StaticResource headers}" Margin="1,0,1,0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE07FAB"/>
+                                <GradientStop Color="#FFE05C98" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label Content="Runda 2" Grid.Row="1" Grid.Column="5" Style="{StaticResource headers}" Margin="1,0,1,0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD44E8B"/>
+                                <GradientStop Color="#FFD6347E" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label Content="Runda 3" Grid.Row="1" Grid.Column="6" Style="{StaticResource headers}" Margin="1,0,1,0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD61C70"/>
+                                <GradientStop Color="#FFDE0C6B" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+
+                    <!--Row 2-->
+                    <Label Content="jedynki" Grid.Row="2" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0.197"/>
+                                <GradientStop Color="#FFF9D90B" Offset="0.62"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="2" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="2" Grid.Column="4" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="2" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="2" Grid.Column="6" Style="{StaticResource p1Content}" />
+
+
+                    <!--Row 3-->
+                    <Label Content="dwójki" Grid.Row="3" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFBF577" Offset="0.037"/>
+                                <GradientStop Color="#FFCFD45F" Offset="0.92"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+
+                    <!--Player 1-->
+                    <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="3" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="3" Grid.Column="4" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="3" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="3" Grid.Column="6" Style="{StaticResource p1Content}" />
+
+
+
+                    <!--Row 4-->
+                    <Label Content="trójki" Grid.Row="4" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFACF73F" Offset="0.97"/>
+                                <GradientStop Color="#FFA8F0A4" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="4" Grid.Column="2" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="4" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="4" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="4" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="4" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 5-->
+                    <Label Content="czwórki" Grid.Row="5" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF3FF12E" Offset="0.777"/>
+                                <GradientStop Color="#FF1BEABB" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="5" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="5" Grid.Column="3" Style="{StaticResource p1Content}" />
+                    <!--Player 2-->
+                    <Label Grid.Row="5" Grid.Column="4" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="5" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="5" Grid.Column="6" Style="{StaticResource p1Content}" />
+
+
+                    <!--Row 6-->
+                    <Label Content="piątki" Grid.Row="6" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF15EE46"/>
+                                <GradientStop Color="#FF32C4D3" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="6" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="6" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="6" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="6" Grid.Column="4" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="6" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="6" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+                    <!--Row 7-->
+                    <Label Content="szórski" Grid.Row="7" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF67ECEC"/>
+                                <GradientStop Color="#FF19BBD4" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="7" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="7" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="7" Grid.Column="3" Style="{StaticResource p1Content}" />
+                    <!--Player 2-->
+                    <Label Grid.Row="7" Grid.Column="4" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="7" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="7" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 8-->
+                    <Label Content="suma" Grid.Row="8" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF39CAF5" Offset="0.87"/>
+                                <GradientStop Color="#FF6992E8" Offset="0.967"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Name="p1SumSchool1" Content="" Grid.Row="8" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label Name="p1SumSchool2" Grid.Row="8" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Name="p1SumSchool3" Grid.Row="8" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Name="p2SumSchool1" Grid.Row="8" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Name="p2SumSchool2" Grid.Row="8" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Name="p2SumSchool3" Grid.Row="8" Grid.Column="6" Style="{StaticResource p1Content}" />
+
+
+                    <!--Row 9-->
+                    <Label Content="premia" Grid.Row="9" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF34B0EA" Offset="0.253"/>
+                                <GradientStop Color="#FF0F6DDC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label x:Name="p1Premiun1" Grid.Row="9" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label x:Name="p1Premiun2" Grid.Row="9" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label x:Name="p1Premiun3" Grid.Row="9" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label x:Name="p2Premiun1" Grid.Row="9" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label x:Name="p2Premiun2" Grid.Row="9" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label x:Name="p2Premiun3" Grid.Row="9" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 10-->
+                    <Label Content="3-jednakowe" Grid.Row="10" Grid.Column="0" Style="{StaticResource headers}" Background="#FF4067EA"/>
+                    <!--Player 1-->
+                    <Label Grid.Row="10" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="10" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="10" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="10" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="10" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="10" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 11-->
+                    <Label Content="4-jednakowe" Grid.Row="11" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4220DC" Offset="1"/>
+                                <GradientStop Color="#FF405EE4" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="11" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="11" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="11" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="11" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="11" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="11" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+                    <!--Row 12-->
+                    <Label Content="full" Grid.Row="12" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFA770EA" Offset="1"/>
+                                <GradientStop Color="#FF2843EE" Offset="0.61"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="12" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="12" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="12" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="12" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="12" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="12" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 13-->
+                    <Label Content="mały strit" Grid.Row="13" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFAF93B8"/>
+                                <GradientStop Color="#FF4220DC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="13" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="13" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="13" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="13" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="13" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="13" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+                    <!--Row 14-->
+                    <Label Content="duży strit" Grid.Row="14" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF50239E" Offset="1"/>
+                                <GradientStop Color="#FF4220DC" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="14" Grid.Column="1" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="14" Grid.Column="2" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="14" Grid.Column="3" Style="{StaticResource p1Content}"/>
+                    <!--Player 2-->
+                    <Label Grid.Row="14" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="14" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="14" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 15-->
+                    <Label Content="generał" Grid.Row="15" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF50239E"/>
+                                <GradientStop Color="#FF9220D3" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="15" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="15" Grid.Column="2" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="15" Grid.Column="3" Style="{StaticResource p1Content}" />
+                    <!--Player 2-->
+                    <Label Grid.Row="15" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="15" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="15" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 16-->
+                    <Label Content="szansa" Grid.Row="16" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF5E1999"/>
+                                <GradientStop Color="#FF9D49E2" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="16" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="16" Grid.Column="2" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="16" Grid.Column="3" Style="{StaticResource p1Content}" />
+                    <!--Player 2-->
+                    <Label Grid.Row="16" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="16" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="16" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+                    <!--Row 17-->
+                    <Label Content="parzyste" Grid.Row="17" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF9C32B4" Offset="0.477"/>
+                                <GradientStop Color="#FF6420DC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="17" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="17" Grid.Column="2" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="17" Grid.Column="3" Style="{StaticResource p1Content}" />
+                    <!--Player 2-->
+                    <Label Grid.Row="17" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="17" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="17" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+                    <!--Row 18-->
+                    <Label Content="nieparzyste" Grid.Row="18" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFEA70C9" Offset="1"/>
+                                <GradientStop Color="#FF8F1EA8" Offset="0.61"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Grid.Row="18" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="18" Grid.Column="2" Style="{StaticResource p1Content}" />
+                    <Label Grid.Row="18" Grid.Column="3" Style="{StaticResource p1Content}" />
+                    <!--Player 2-->
+                    <Label Grid.Row="18" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="18" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Grid.Row="18" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 19-->
+                    <Label Content="suma" Grid.Row="19" Grid.Column="0" Style="{StaticResource headers}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFEE5F1C"/>
+                                <GradientStop Color="#FFF17A4D" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label Name="p1SumOther1"  Grid.Row="19" Grid.Column="1" Style="{StaticResource p1Content}" />
+                    <Label Name="p1SumOther2" Grid.Row="19" Grid.Column="2" Style="{StaticResource p1Content}" />
+                    <Label Name="p1SumOther3" Grid.Row="19" Grid.Column="3" Style="{StaticResource p1Content}" />
+                    <!--Player 2-->
+                    <Label Name="p2SumOther1" Grid.Row="19" Grid.Column="4" Style="{StaticResource p1Content}"/>
+                    <Label Name="p2SumOther2" Grid.Row="19" Grid.Column="5" Style="{StaticResource p1Content}"/>
+                    <Label Name="p2SumOther3" Grid.Row="19" Grid.Column="6" Style="{StaticResource p1Content}"/>
+
+
+                    <!--Row 20-->
+                    <Label Content="razem" Grid.Row="20" Grid.Column="0" Style="{StaticResource headers}" >
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFEC4621"/>
+                                <GradientStop Color="#FFF11515" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <!--Player 1-->
+                    <Label x:Name="p1Total1" Grid.Row="20" Grid.Column="1" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
+                    <Label x:Name="p1Total2" Grid.Row="20" Grid.Column="2" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
+                    <Label x:Name="p1Total3" Grid.Row="20" Grid.Column="3" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
+                    <!--Player 2-->
+                    <Label x:Name="p2Total1" Grid.Row="20" Grid.Column="4" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
+                    <Label x:Name="p2Total2" Grid.Row="20" Grid.Column="5" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
+                    <Label x:Name="p2Total3" Grid.Row="20" Grid.Column="6" Style="{StaticResource p1Content}" FontWeight="DemiBold"/>
+                    <!--Row 21-->
+                    <Label Content="WYNIK" Grid.Row="21" Grid.Column="0" Style="{StaticResource headers}" MinHeight="35" HorizontalContentAlignment="Center" BorderThickness="2" Margin="0">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF99CED6" Offset="0.84"/>
+                                <GradientStop Color="White" Offset="0.273"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="p1Score" Grid.Row="21" Grid.Column="1" Content="0 ptk." MinHeight="35" Grid.ColumnSpan="3" Style="{StaticResource score}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF7498CB" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="p2Score" Grid.Row="21" Grid.Column="4" Content="0 ptk." MinHeight="35" Grid.ColumnSpan="3" Style="{StaticResource score}">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF7498CB" Offset="0.21"/>
+                                <GradientStop Color="#FFC1C4E4" Offset="0.677"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+
+                </Grid>
+
+
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <WrapPanel.Resources>
+                        <Style TargetType="Image">
+                            <Setter Property="Margin" Value="5"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <Image  x:Name="imgD1" Source="\Dices\1.png" Width="75" Height="75" MouseLeftButtonDown="imgD1_MouseLeftButtonDown" />
+                    <Image  x:Name="imgD2" Source="\Dices\6s.png" Width="75" Height="75" MouseLeftButtonDown="imgD2_MouseLeftButtonDown" />
+                    <Image  x:Name="imgD3" Source="\Dices\4.png" Width="75" Height="75" MouseLeftButtonDown="imgD3_MouseLeftButtonDown" />
+                    <Image  x:Name="imgD4" Source="\Dices\3.png" Width="75" Height="75" MouseLeftButtonDown="imgD4_MouseLeftButtonDown"  />
+                    <Image  x:Name="imgD5" Source="\Dices\4.png" Width="75" Height="75" MouseLeftButtonDown="imgD5_MouseLeftButtonDown" />
+
+                </WrapPanel>
+
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <Button x:Name="btnRollTheDices" Content="Rzuć kośćmi" Margin="10" BorderBrush="Black" BorderThickness="2" VerticalAlignment="Center" MinHeight="35" Click="btnRollTheDices_Click" FontSize="16">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFF5F5ED"/>
+                                <GradientStop Color="#FFF7F707" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Label x:Name="lblChooseDicesToReroll" Content="Wybierz kości do wymiany" VerticalContentAlignment="Center" MinHeight="35" FontSize="16" Foreground="Black" BorderThickness="2" BorderBrush="Black" Margin="20">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF0CEE35" Offset="0.993"/>
+                                <GradientStop Color="#FFC4ECCB" Offset="0.297"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="lblRoll" Content="Rzut nr 0" VerticalContentAlignment="Center" MinHeight="35" FontSize="16" Foreground="Black" BorderThickness="2" BorderBrush="Black" Margin="10" VerticalAlignment="Center">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFA198DA" Offset="1"/>
+                                <GradientStop Color="Black" Offset="1"/>
+                                <GradientStop Color="#FFD1CFE0" Offset="0.447"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+
             </StackPanel>
 
-        </StackPanel>
 
 
 
 
-
-    </Border>
+        </Border>
+    </ScrollViewer>
 </Window>
